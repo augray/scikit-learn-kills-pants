@@ -1,0 +1,49 @@
+21:48:37 00:00 [main]
+               (To run a reporting server: ./pants server)
+21:48:37 00:00   [setup]
+21:48:37 00:00     [parse]
+               Executing tasks in goals: gen -> pyprep -> binary
+21:48:37 00:00   [gen]
+21:48:37 00:00     [thrift-py]
+21:48:37 00:00   [pyprep]
+21:48:37 00:00     [interpreter]
+21:48:37 00:00     [requirements]
+21:48:37 00:00       [cache]  
+                   No cached artifacts for 2 targets.
+                   Invalidated 2 targets.pex: Constructed RequestsContext context <pex.http.RequestsContext object at 0x3cba510>
+pex: Constructed RequestsContext context <pex.http.RequestsContext object at 0x3ca36d0>
+pex: crawling link i=0 link=Link(u'file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5') follow_links=False
+pex: crawling link i=0 link=Link('https://pypi.python.org/simple/scikit-learn/') follow_links=False
+pex: Constructed RequestsContext context <pex.http.RequestsContext object at 0x3f26dd0>
+pex: crawling link i=0 link=Link('https://pypi.python.org/simple/numpy/') follow_links=False
+pex: Constructed RequestsContext context <pex.http.RequestsContext object at 0x3f26e10>
+pex: crawling link i=0 link=Link('https://pypi.python.org/simple/scipy/') follow_links=False
+pex: Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/numpy-1.6.1-cp27-cp27mu-linux_x86_64.whl :: Fetching file:///home/ec2-user/scikit-lpex: Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/numpy-1.6.1-cp27-cp27mu-linux_x86_64.whl: 4.6ms                                                                                                                                                       
+pex:   Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/numpy-1.6.1-cp27-cp27mu-linux_x86_64.whl: 4.1ms
+pex: Translating /tmp/tmpTquArV/numpy-1.6.1-cp27-cp27mu-linux_x86_64.whl into distribution: 7.7ms
+pex: Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/scipy-0.19.1.tar.gz :: Fetching file:///home/ec2-user/scikit-learn-kills-pants/.panpex: Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/scipy-0.19.1.tar.gz: 11.6ms                                                                                                                                 
+pex:   Fetching file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/scipy-0.19.1.tar.gz: 11.1ms
+**** Failed to install scipy-0.19.1 (caused by: NonZeroExit("received exit code 1 during execution of `[u'/usr/bin/python2.7', '-', 'bdist_wheel', '--dist-dir=/tmp/tmpV4uqJp']` while trying to execute `[u'/usr/bin/python2.7', '-', 'bdist_wheel', '--dist-dir=/tmp/tmpV4uqJp']`",)
+):
+stdout:
+
+stderr:
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "setup.py", line 416, in <module>
+    setup_package()
+  File "setup.py", line 396, in setup_package
+    from numpy.distutils.core import setup
+ImportError: No module named numpy.distutils.core
+
+
+pex: Failed to install package at /tmp/tmpRZgsB2/scipy-0.19.1: Failed to install /tmp/tmpRZgsB2/scipy-0.19.1         
+pex: Translating /tmp/tmp9zURgJ/scipy-0.19.1.tar.gz into distribution: 1398.4ms
+pex:   Packaging scipy: 222.1ms
+pex:     Installing /tmp/tmpV4uqJp: 221.9ms
+
+21:48:39 00:02   [complete]
+               FAILURE
+Exception caught: (<class 'pex.resolver.Untranslateable'>)
+
+Exception message: Package SourcePackage(u'file:///home/ec2-user/scikit-learn-kills-pants/.pants.d/python-setup/resolved_requirements/CPython-2.7.5/scipy-0.19.1.tar.gz') is not translateable by ChainedTranslator(WheelTranslator, EggTranslator, SourceTranslator)
